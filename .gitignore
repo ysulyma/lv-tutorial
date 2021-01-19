@@ -9,3 +9,6 @@ node_modules
 *.webm
 *.png
 *.svg
+
+# certificate
+/ssl
