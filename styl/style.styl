@@ -1,0 +1,44 @@
+@import "rp-prompt/style"
+
+$blue = #1A69B5
+$wine = #AF1866
+
+@import "lib/help-control"
+@import "lib/loading-screen"
+
+@import "intro"
+@import "playback"
+
+h2
+  color $blue
+  font-family "Alegreya"
+  font-size 4rem
+  margin-top .5em
+  text-align center
+
+.rp-canvas
+  background #EEE
+  
+body
+  font-family sans-serif
+  
+section
+  font-size 1.5rem
+  height 100%
+  left 0
+  position absolute
+  top 0
+  width 100%
+  
+.rp-prompt
+  color #FFF
+  font-size 1rem
+  
+:link, :visited
+  color $blue
+
+#recording-https-link
+  display block
+
+.rp-cursor
+  width 3rem

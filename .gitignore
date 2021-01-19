@@ -1,0 +1,11 @@
+# OS files
+.DS_Store
+
+# Node
+node_modules
+
+# media
+*.mp4
+*.webm
+*.png
+*.svg
