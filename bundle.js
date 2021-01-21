@@ -9,113 +9,49 @@
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 
-(function webpackUniversalModuleDefinition(root, factory) {
-    if (true)
-        module.exports = factory(__webpack_require__(/*! react */ "react"), __webpack_require__(/*! ractive-player */ "ractive-player"));
-    else {}
-})(self, function (__WEBPACK_EXTERNAL_MODULE_react__, __WEBPACK_EXTERNAL_MODULE_ractive_player__) {
-    return (() => {
-        "use strict";
-        var __webpack_modules__ = ({
-            "./src/Cursor.tsx": ((__unused_webpack_module, __webpack_exports__, __nested_webpack_require_799__) => {
-                __nested_webpack_require_799__.r(__webpack_exports__);
-                __nested_webpack_require_799__.d(__webpack_exports__, {
-                    "default": () => Cursor
-                });
-                var react__WEBPACK_IMPORTED_MODULE_0__ = __nested_webpack_require_799__("react");
-                var react__WEBPACK_IMPORTED_MODULE_0___default = __nested_webpack_require_799__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-                var ractive_player__WEBPACK_IMPORTED_MODULE_1__ = __nested_webpack_require_799__("ractive-player");
-                var ractive_player__WEBPACK_IMPORTED_MODULE_1___default = __nested_webpack_require_799__.n(ractive_player__WEBPACK_IMPORTED_MODULE_1__);
-                const { replay } = ractive_player__WEBPACK_IMPORTED_MODULE_1__.Utils.animation, { between } = ractive_player__WEBPACK_IMPORTED_MODULE_1__.Utils.misc;
-                function Cursor(props) {
-                    const { playback, script } = (0, ractive_player__WEBPACK_IMPORTED_MODULE_1__.usePlayer)();
-                    const ref = react__WEBPACK_IMPORTED_MODULE_0__.useRef();
-                    const start = script.parseStart(props.start), end = script.parseEnd(props.end);
-                    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(() => {
-                        const { display } = ref.current.style;
-                        ref.current.style.display = "block";
-                        const { height, width } = ref.current.getBoundingClientRect();
-                        ref.current.style.display = display;
-                        const update = replay({
-                            data: props.replay,
-                            start,
-                            end,
-                            active: (([x, y]) => {
-                                Object.assign(ref.current.style, {
-                                    opacity: 1,
-                                    left: `calc(${x}% - ${width / 2}px)`,
-                                    top: `calc(${y}% - ${height / 2}px)`
-                                });
-                            }),
-                            inactive: () => {
-                                ref.current.style.opacity = "0";
-                            },
-                            compressed: true
-                        });
-                        playback.hub.on("seek", update);
-                        playback.hub.on("timeupdate", update);
-                        update(playback.currentTime);
-                        return () => {
-                            playback.hub.off("seek", update);
-                            playback.hub.off("timeupdate", update);
-                        };
-                    }, [ref.current]);
-                    const style = { pointerEvents: "none", position: "absolute", zIndex: 1000 };
-                    if (between(start, playback.currentTime, end))
-                        style.opacity = 0;
-                    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { className: "rp-cursor", ref: ref, src: props.src, style: style }));
-                }
-            }),
-            "ractive-player": ((module) => {
-                module.exports = __WEBPACK_EXTERNAL_MODULE_ractive_player__;
-            }),
-            "react": ((module) => {
-                module.exports = __WEBPACK_EXTERNAL_MODULE_react__;
-            })
-        });
-        var __webpack_module_cache__ = {};
-        function __nested_webpack_require_4192__(moduleId) {
-            if (__webpack_module_cache__[moduleId]) {
-                return __webpack_module_cache__[moduleId].exports;
-            }
-            var module = __webpack_module_cache__[moduleId] = {
-                exports: {}
-            };
-            __webpack_modules__[moduleId](module, module.exports, __nested_webpack_require_4192__);
-            return module.exports;
+!function (e, t) {  true ? module.exports = t(__webpack_require__(/*! react */ "react"), __webpack_require__(/*! ractive-player */ "ractive-player")) : 0; }(self, (function (e, t) { return (() => {
+    "use strict";
+    var r = { 838: (e, t, r) => { r.r(t), r.d(t, { default: () => s }); var o = r(888), n = r(576); const { replay: a } = n.Utils.animation, { between: c } = n.Utils.misc; function s(e) { const { playback: t, script: r } = (0, n.usePlayer)(), s = o.useRef(), i = r.parseStart(e.start), u = r.parseEnd(e.end); o.useEffect((() => { const { display: r } = s.current.style; s.current.style.display = "block"; const { height: o, width: n } = s.current.getBoundingClientRect(); s.current.style.display = r; const c = a({ data: e.replay, start: i, end: u, active: ([e, t]) => { Object.assign(s.current.style, { opacity: 1, left: `calc(${e}% - ${n / 2}px)`, top: `calc(${t}% - ${o / 2}px)` }); }, inactive: () => { s.current.style.opacity = "0"; }, compressed: !0 }); return t.hub.on("seek", c), t.hub.on("timeupdate", c), c(t.currentTime), () => { t.hub.off("seek", c), t.hub.off("timeupdate", c); }; }), [s.current]); const p = { pointerEvents: "none", position: "absolute", zIndex: 1e3 }; return c(i, t.currentTime, u) && (p.opacity = 0), o.createElement("img", { className: "rp-cursor", ref: s, src: e.src, style: p }); } }, 576: e => { e.exports = t; }, 888: t => { t.exports = e; } }, o = {};
+    function n(e) { if (o[e])
+        return o[e].exports; var t = o[e] = { exports: {} }; return r[e](t, t.exports, n), t.exports; }
+    return n.n = e => { var t = e && e.__esModule ? () => e.default : () => e; return n.d(t, { a: t }), t; }, n.d = (e, t) => { for (var r in t)
+        n.o(t, r) && !n.o(e, r) && Object.defineProperty(e, r, { enumerable: !0, get: t[r] }); }, n.o = (e, t) => Object.prototype.hasOwnProperty.call(e, t), n.r = e => { "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(e, "__esModule", { value: !0 }); }, n(838);
+})(); }));
+
+
+/***/ }),
+
+/***/ "./lib/Link.tsx":
+/*!**********************!*\
+  !*** ./lib/Link.tsx ***!
+  \**********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => /* binding */ Link
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var ractive_player__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ractive-player */ "ractive-player");
+/* harmony import */ var ractive_player__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(ractive_player__WEBPACK_IMPORTED_MODULE_1__);
+var __rest = (undefined && undefined.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
         }
-        (() => {
-            __nested_webpack_require_4192__.n = (module) => {
-                var getter = module && module.__esModule ?
-                    () => module['default'] :
-                    () => module;
-                __nested_webpack_require_4192__.d(getter, { a: getter });
-                return getter;
-            };
-        })();
-        (() => {
-            __nested_webpack_require_4192__.d = (exports, definition) => {
-                for (var key in definition) {
-                    if (__nested_webpack_require_4192__.o(definition, key) && !__nested_webpack_require_4192__.o(exports, key)) {
-                        Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
-                    }
-                }
-            };
-        })();
-        (() => {
-            __nested_webpack_require_4192__.o = (obj, prop) => Object.prototype.hasOwnProperty.call(obj, prop);
-        })();
-        (() => {
-            __nested_webpack_require_4192__.r = (exports) => {
-                if (typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-                    Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-                }
-                Object.defineProperty(exports, '__esModule', { value: true });
-            };
-        })();
-        return __nested_webpack_require_4192__("./src/Cursor.tsx");
-    })();
-});
+    return t;
+};
+
+
+function Link(props) {
+    const { children } = props, attrs = __rest(props, ["children"]);
+    return react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", Object.assign({ onMouseUp: ractive_player__WEBPACK_IMPORTED_MODULE_1__.Player.preventCanvasClick, target: "_blank" }, attrs), children);
+}
 
 
 /***/ }),
@@ -320,11 +256,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var ractive_player__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ractive-player */ "ractive-player");
 /* harmony import */ var ractive_player__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(ractive_player__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _media_url__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./media-url */ "./src/media-url.ts");
+/* harmony import */ var _lib_Link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @lib/Link */ "./lib/Link.tsx");
+/* harmony import */ var _media_url__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./media-url */ "./src/media-url.ts");
 
 
 
 const { during, from } = ractive_player__WEBPACK_IMPORTED_MODULE_1__.Utils.authoring, { between } = ractive_player__WEBPACK_IMPORTED_MODULE_1__.Utils.misc;
+
 
 function Intro() {
     const player = (0,ractive_player__WEBPACK_IMPORTED_MODULE_1__.usePlayer)();
@@ -348,14 +286,14 @@ function Intro() {
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", Object.assign({ id: "sec-intro" }, during("intro/")),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null,
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "ractive" },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { alt: "R", src: `${_media_url__WEBPACK_IMPORTED_MODULE_2__.MEDIA_URL}/img/R.svg` }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { alt: "R", src: `${_media_url__WEBPACK_IMPORTED_MODULE_3__.MEDIA_URL}/img/R.svg` }),
                     "active"),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "player" },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { alt: "P", src: `${_media_url__WEBPACK_IMPORTED_MODULE_2__.MEDIA_URL}/img/P.svg` }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { alt: "P", src: `${_media_url__WEBPACK_IMPORTED_MODULE_3__.MEDIA_URL}/img/P.svg` }),
                     "layer")),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", null, text),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("dfn", { id: "dfn-ractives" },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", { href: "https://en.wikipedia.org/wiki/The_Diamond_Age" }, "(ractives)")),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_lib_Link__WEBPACK_IMPORTED_MODULE_2__.default, { href: "https://en.wikipedia.org/wiki/The_Diamond_Age" }, "(ractives)")),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", Object.assign({ className: "box", id: "fiddle" }, from("intro/fiddle"), { onMouseUp: ractive_player__WEBPACK_IMPORTED_MODULE_1__.Player.preventCanvasClick }),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null,
                     "Try changing the background color:",
@@ -364,14 +302,14 @@ function Intro() {
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("textarea", { onBlur: player.resumeKeyCapture, onFocus: player.suspendKeyCapture, onChange: onChangeText, value: text })),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", Object.assign({ className: "box" }, from("intro/lmqm")),
                 "More examples at ",
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", { href: "https://lmqm.xyz" }, "La mer qui monte")),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_lib_Link__WEBPACK_IMPORTED_MODULE_2__.default, { href: "https://lmqm.xyz" }, "La mer qui monte")),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", Object.assign({ className: "box", id: "get-started" }, from("intro/get-started")),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null,
                     "Clone this tutorial: ",
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", { href: "https://github.com/ysulyma/rp-tutorial" }, "https://github.com/ysulyma/rp-tutorial")),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_lib_Link__WEBPACK_IMPORTED_MODULE_2__.default, { href: "https://github.com/ysulyma/rp-tutorial" }, "https://github.com/ysulyma/rp-tutorial")),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", Object.assign({}, from("intro/reddit")),
                     "Discussion: ",
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", { href: "https://reddit.com/r/ractive_player/" }, "https://reddit.com/r/ractive_player/"))))));
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(_lib_Link__WEBPACK_IMPORTED_MODULE_2__.default, { href: "https://reddit.com/r/ractive_player/" }, "https://reddit.com/r/ractive_player/"))))));
 }
 
 
@@ -391,9 +329,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var ractive_player__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ractive-player */ "ractive-player");
 /* harmony import */ var ractive_player__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(ractive_player__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _lib_Link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @lib/Link */ "./lib/Link.tsx");
 
 
 const { during, from } = ractive_player__WEBPACK_IMPORTED_MODULE_1__.Utils.authoring;
+
 function PlaybackSlide() {
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", Object.assign({ id: "sec-playback" }, during("playback/")),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", null, "Playback"),
@@ -401,11 +341,11 @@ function PlaybackSlide() {
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", Object.assign({}, from("playback/loop")), "animation loop simulating a media element advancing in time"),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", Object.assign({}, from("playback/html")),
                 "imitates (but does not fully implement) the ",
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", { href: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement" }, "HTMLMediaElement"),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_lib_Link__WEBPACK_IMPORTED_MODULE_2__.default, { href: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement" }, "HTMLMediaElement"),
                 " interface"),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", Object.assign({}, from("playback/hub")),
                 "emits events through ",
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", { href: "https://nodejs.org/api/events.html#events_class_eventemitter" }, "EventEmitter"),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_lib_Link__WEBPACK_IMPORTED_MODULE_2__.default, { href: "https://nodejs.org/api/events.html#events_class_eventemitter" }, "EventEmitter"),
                 " ",
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("code", null, "playback.hub")))));
 }
@@ -465,12 +405,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ractive_player__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(ractive_player__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var rp_cursor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rp-cursor */ "../rp-cursor/rp-cursor.js");
 /* harmony import */ var rp_cursor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(rp_cursor__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _media_url__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./media-url */ "./src/media-url.ts");
-/* harmony import */ var _recordings__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./recordings */ "./src/recordings.ts");
+/* harmony import */ var _lib_Link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @lib/Link */ "./lib/Link.tsx");
+/* harmony import */ var _media_url__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./media-url */ "./src/media-url.ts");
+/* harmony import */ var _recordings__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./recordings */ "./src/recordings.ts");
 
 
 
 const { during, from } = ractive_player__WEBPACK_IMPORTED_MODULE_1__.Utils.authoring;
+
 
 
 
@@ -482,17 +424,17 @@ function PlaybackSlide() {
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null,
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", Object.assign({}, from("recording/npm")),
                 "recording functionality provided by ",
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", { href: "https://www.npmjs.com/package/rp-recording" }, "rp-recording")),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_lib_Link__WEBPACK_IMPORTED_MODULE_3__.default, { href: "https://www.npmjs.com/package/rp-recording" }, "rp-recording")),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", Object.assign({}, from("recording/control")),
                 "implemented as custom control, c.f. ",
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("code", null, "index.tsx")),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", Object.assign({}, from("recording/https")),
                 "can only record audio over HTTPS!",
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", Object.assign({ id: "recording-https-link" }, from("recording/link"), { href: "https://www.freecodecamp.org/news/how-to-get-https-working-on-your-local-development-environment-in-5-minutes-7af615770eec/" }), "How to get HTTPS working on your local development environment")),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_lib_Link__WEBPACK_IMPORTED_MODULE_3__.default, Object.assign({ id: "recording-https-link" }, from("recording/link"), { href: "https://www.freecodecamp.org/news/how-to-get-https-working-on-your-local-development-environment-in-5-minutes-7af615770eec/" }), "How to get HTTPS working on your local development environment")),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", Object.assign({}, from("recording/cursor")),
                 "plugin API, e.g. ",
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", { href: "https://www.npmjs.com/package/rp-cursor" }, "rp-cursor"))),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement((rp_cursor__WEBPACK_IMPORTED_MODULE_2___default()), { src: `${_media_url__WEBPACK_IMPORTED_MODULE_3__.MEDIA_URL}/img/cursor.svg`, start: start, end: "recording/cursor", replay: _recordings__WEBPACK_IMPORTED_MODULE_4__.cursorReplay })));
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_lib_Link__WEBPACK_IMPORTED_MODULE_3__.default, { href: "https://www.npmjs.com/package/rp-cursor" }, "rp-cursor"))),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement((rp_cursor__WEBPACK_IMPORTED_MODULE_2___default()), { src: `${_media_url__WEBPACK_IMPORTED_MODULE_4__.MEDIA_URL}/img/cursor.svg`, start: start, end: "recording/cursor", replay: _recordings__WEBPACK_IMPORTED_MODULE_5__.cursorReplay })));
 }
 
 

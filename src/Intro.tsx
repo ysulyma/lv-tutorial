@@ -5,6 +5,8 @@ import {IdMap, Player, Utils, usePlayer, useTimeUpdate} from "ractive-player";
 const {during, from} = Utils.authoring,
       {between} = Utils.misc;
 
+import Link from "@lib/Link";
+
 import {MEDIA_URL} from "./media-url";
 // import {IntroScript} from "./script";
 
@@ -42,7 +44,7 @@ export default function Intro() {
         </h1>
         <h2>{text}</h2>
 
-        <dfn id="dfn-ractives"><a href="https://en.wikipedia.org/wiki/The_Diamond_Age">(ractives)</a></dfn>
+        <dfn id="dfn-ractives"><Link href="https://en.wikipedia.org/wiki/The_Diamond_Age">(ractives)</Link></dfn>
 
         <div className="box" id="fiddle" {...from("intro/fiddle")} onMouseUp={Player.preventCanvasClick}>
           <p>Try changing the background color:
@@ -55,18 +57,18 @@ export default function Intro() {
         </div>
 
         <p className="box" {...from("intro/lmqm")}>
-        More examples at <a href="https://lmqm.xyz">La mer qui monte</a>
+        More examples at <Link href="https://lmqm.xyz">La mer qui monte</Link>
         </p>
 
         <div className="box" id="get-started" {...from("intro/get-started")}>
-          <p>Clone this tutorial: <a href="https://github.com/ysulyma/rp-tutorial">https://github.com/ysulyma/rp-tutorial</a></p>
+          <p>Clone this tutorial: <Link href="https://github.com/ysulyma/rp-tutorial">https://github.com/ysulyma/rp-tutorial</Link></p>
         
-          <p {...from("intro/reddit")}>Discussion: <a href="https://reddit.com/r/ractive_player/">https://reddit.com/r/ractive_player/</a></p>
+          <p {...from("intro/reddit")}>Discussion: <Link href="https://reddit.com/r/ractive_player/">https://reddit.com/r/ractive_player/</Link></p>
         </div>
 
-        {/*<a href="https://en.wikipedia.org/wiki/The_Diamond_Age" id="diamond-age">
+        {/*<Link href="https://en.wikipedia.org/wiki/The_Diamond_Age" id="diamond-age">
         <img src="https://covers.openlibrary.org/b/id/8598269-L.jpg"/>
-      </a>*/}
+      </Link>*/}
 
         {/*<IntroScript/>*/}
       </section>
