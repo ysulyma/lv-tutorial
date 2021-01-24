@@ -6,7 +6,7 @@ import {Audio, Controls, IdMap, Script, Player} from "ractive-player";
 // import ThumbCapture from "rp-thumb-capture";
 // import CursorRecorderPlugin from "rp-cursor/recorder";
 
-// @libr
+// @lib
 // import HelpControl from "@lib/HelpControl";
 // import LoadingScreen from "@lib/LoadingScreen";
 // import ShowMarkerName from "@lib/ShowMarkerName";
