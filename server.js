@@ -4,11 +4,11 @@ const livereload = require("livereload");
 
 // livereload
 const lrServer = livereload.createServer({
-  https: {
+/*  https: {
     key: fs.readFileSync(`${__dirname}/ssl/ractive-player.key`, "utf-8"),
     cert: fs.readFileSync(`${__dirname}/ssl/ractive-player.crt`, "utf-8")
-  },
-  port: 35900
+  },*/
+  port: 35729
 });
 
 // this is bad...
