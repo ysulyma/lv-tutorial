@@ -14,11 +14,11 @@ To compile TSX to JS:
 `webpack --watch`
 
 To compile Stylus to CSS:
-
-`stylus \
+```
+stylus \
   --compress \
   --include-css \
   --include ./node_modules \
   --out . \
   --watch styl/style.styl
-`
+```
