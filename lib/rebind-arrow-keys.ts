@@ -13,6 +13,6 @@ export default (player: Player) => {
   for (const h of keymap.getHandlers("ArrowRight"))
     keymap.unbind("ArrowRight", h);
 
-  keymap.bind("ArrowLeft", script.back);
+  // keymap.bind("ArrowLeft", script.back);
   keymap.bind("ArrowRight", script.forward);
 }

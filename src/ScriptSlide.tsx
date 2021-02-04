@@ -3,7 +3,7 @@ import * as React from "react";
 import {Utils} from "ractive-player";
 const {during, from} = Utils.authoring;
 
-// import {ScriptScript} from "./script";
+import {ScriptPrompt} from "./prompts";
 
 export default function ScriptSlide() {
   return (
@@ -17,7 +17,7 @@ export default function ScriptSlide() {
         <li {...from("script/ew")}>press <kbd>E</kbd> to advance a marker, <kbd>W</kbd> to go back one marker</li>
       </ul>
 
-      {/*<ScriptScript/>*/}
+      <ScriptPrompt/>
     </section>
   );
 }

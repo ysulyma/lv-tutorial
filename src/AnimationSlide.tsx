@@ -5,7 +5,7 @@ import {Utils, usePlayer, useTimeUpdate} from "ractive-player";
 const {animate} = Utils.animation,
       {during} = Utils.authoring;
 
-// import {AnimationScript} from "./script";
+import {AnimationPrompt} from "./prompts";
 
 import * as BezierEasing from "bezier-easing";
 const easeInSine = [0.47, 0, 0.745, 0.715] as const;
@@ -30,7 +30,7 @@ export default function AnimationSlide() {
   return (
     <section id="sec-animation" {...during("animation/")}>
       <span ref={ref} style={{position: "absolute", left: "50%", top: "50%",textAlign: "center"}}>whoa</span>
-      {/*<AnimationScript/>*/}
+      <AnimationPrompt/>
     </section>
   );
 }

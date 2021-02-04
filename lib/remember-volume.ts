@@ -1,5 +1,11 @@
 import type {Playback} from "ractive-player";
 
+/**
+Remember volume settings between views.
+
+This is disabled by default due to GPDR.
+*/
+
 export default (playback: Playback) => {
   const storage = window.localStorage;
 

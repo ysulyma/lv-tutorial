@@ -1,4 +1,6 @@
-@import "rp-prompt/style"
+@import "rp-codebooth/style.css"
+@import "rp-paint/style.css"
+@import "rp-prompt/style.css"
 
 $blue = #1A69B5
 $wine = #AF1866
@@ -11,6 +13,7 @@ $wine = #AF1866
 
 @import "intro"
 @import "playback"
+@import "utils"
 
 h2
   color $blue
@@ -24,6 +27,14 @@ h2
   
 body
   font-family sans-serif
+  
+.draggable
+  cursor grab
+  cursor -webkit-grab
+
+body.dragging .rp-canvas, body.dragging .draggable, .dragging
+  cursor grabbing
+  cursor -webkit-grabbing
   
 section
   font-size 1.5rem
@@ -44,4 +55,10 @@ section
   display block
 
 .rp-cursor
-  width 3rem
+  width 2rem
+
+#sec-cursor > p
+  font-size 2em
+  line-height 1.5
+  margin 1em
+  

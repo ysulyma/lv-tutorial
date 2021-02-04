@@ -5,7 +5,7 @@ const {during, from} = Utils.authoring;
 
 import Link from "@lib/Link";
 
-// import {PlaybackScript} from "./script";
+import {PlaybackPrompt} from "./prompts";
 
 export default function PlaybackSlide() {
   return (
@@ -18,7 +18,7 @@ export default function PlaybackSlide() {
 
         <li {...from("playback/hub")}>emits events through <Link href="https://nodejs.org/api/events.html#events_class_eventemitter">EventEmitter</Link> <code>playback.hub</code></li>
       </ul>
-      {/*<PlaybackScript/>*/}
+      <PlaybackPrompt/>
     </section>
   );
 }

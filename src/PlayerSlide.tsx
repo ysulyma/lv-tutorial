@@ -3,7 +3,7 @@ import * as React from "react";
 import {Utils} from "ractive-player";
 const {during, from} = Utils.authoring;
 
-// import {PlayerScript} from "./script";
+import {PlayerPrompt} from "./prompts";
 
 export default function PlayerSlide() {
   return (
@@ -18,7 +18,7 @@ export default function PlayerSlide() {
         <li {...from("player/hook")}>access with <code>usePlayer()</code></li>
       </ul>
 
-      {/*<PlayerScript/>*/}
+      <PlayerPrompt/>
     </section>
   );
 }

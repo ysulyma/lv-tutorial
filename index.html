@@ -6,39 +6,53 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1"/>
   
+  <!-- fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&amp;display=swap" rel="stylesheet"> 
 
+  <!-- CodeMirror -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/codemirror.min.css" integrity="sha512-MWdvo/Qqcf4pY1ecQUB1uBn0qLp19U/qJ1Rpp2BDZeuBA7YsFEwkvqR/+aG4BroPiAYDunKJ6X8R/Pmdt3p7oA==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/addon/hint/show-hint.min.css" integrity="sha512-OmcLQEy8iGiD7PSm85s06dnR7G7C9C0VqahIPAj/KHk5RpOCmnC6R2ob1oK4/uwYhWa9BF1GC6tzxsC8TIx7Jg==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/theme/monokai.min.css" integrity="sha512-R6PH4vSzF2Yxjdvb2p2FA06yWul+U0PDDav4b/od/oXf9Iw37zl10plvwOXelrjV2Ai7Eo3vyHeyFUjhXdBCVQ==" crossorigin="anonymous" />
+
+  <!-- ractive-player -->
   <link href="https://unpkg.com/ractive-player/dist/ractive-player.min.css" rel="stylesheet" type="text/css"/>
   <!-- <link href="https://unpkg.com/rp-recording/dist/rp-recording.min.css" rel="stylesheet" type="text/css"/> -->
   
-  <link href="./style.css" rel="stylesheet"/>
+  <link href="./style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
   <main></main>
 
   <!-- development -->
-  <!-- <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.1/umd/react.development.js"></script> -->
-  <!-- <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.1/umd/react-dom.development.js"></script> -->
+<!--   <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.1/umd/react.development.js"></script>
+  <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.1/umd/react-dom.development.js"></script>
 
-  <!-- <script crossorigin src="https://unpkg.com/ractive-player@2.0.1/dist/ractive-player.js"></script> -->
-  <!-- <script crossorigin src="https://unpkg.com/rp-recording@2.0.0/dist/rp-recording.js"></script> -->
-
+  <script crossorigin src="https://unpkg.com/ractive-player@2.0.1/dist/ractive-player.js"></script>
+  <script crossorigin src="https://unpkg.com/rp-recording@2.0.0/dist/rp-recording.js"></script>
+ -->
   <!-- production -->
   <script crossorigin integrity="sha384-YF0qbrX3+TW1Oyow2MYZpkEMq34QcYzbTJbSb9K0sdeykm4i4kTCSrsYeH8HX11w" src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.1/umd/react.production.min.js"></script>
   <script crossorigin integrity="sha384-DHlzXk2aXirrhqAkoaI5lzdgwWB07jUHz7DJGmS4Vlvt5U/ztRy+Yr8oSgQw5QaE" src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.1/umd/react-dom.production.min.js"></script>
 
-  <script
-    crossorigin integrity="sha384-4yv6tMhhEp8SERais0iq4KceWF8168DXbTKHBWb81AhOltBmb+/y+digyHf43zT/"
-    src="https://unpkg.com/ractive-player@2.0.1/dist/ractive-player.min.js"></script>
+  <script crossorigin integrity="sha384-4yv6tMhhEp8SERais0iq4KceWF8168DXbTKHBWb81AhOltBmb+/y+digyHf43zT/" src="https://unpkg.com/ractive-player@2.0.1/dist/ractive-player.min.js"></script>
 <!--   <script
     crossorigin integrity="sha384-i8lb1Og1wx2OCaaoHZZg4kt/60pIfv7dAF4S7mlj9MJ8EEkFkATCilSFD11Pcm5J"
     src="https://unpkg.com/rp-recording@2.0.0/dist/rp-recording.min.js"></script>
  -->
   <script crossorigin integrity="sha384-ImWMbbJ1rSn1mn+2vsKm/wN6Vc7hPNB2VKN0lX3FAzGK+c7M2mD6ZZcwknuKlP7K" src="https://cdn.rangetouch.com/2.0.1/rangetouch.js"></script>
+
+  <!-- CodeMirror -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/codemirror.min.js" integrity="sha512-UZAFKlbB343VyEfCComsVIxp836iYUvHyAuRYFoVN4LTNB6mpM+8EgKW8ymIV2qLZQsIiNdbpmJuA8y6IKzOow==" crossorigin="anonymous"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/mode/javascript/javascript.min.js" integrity="sha512-+tn2IYnLwD2J9p6Nrn/Dl7ag9lluHA0GAblT/vnMiJV8DU/iDsldgf+9XbEqZUee2ThyDtfmSDb+IDZ9u7jrSA==" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/addon/hint/show-hint.min.js" integrity="sha512-0DOTP7HSS4G4YFu9YSLmHMmzSUQmK136iJLWMmy3TxaDBI6K/r9NSo7+5LmwPjwW97EkR5VT8qdRoLqv/D/TeQ==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/addon/hint/anyword-hint.min.js" integrity="sha512-wdYOcbX/zcS4tP3HEDTkdOI5UybyuRxJMQzDQIRcafRLY/oTDWyXO+P8SzuajQipcJXkb2vHcd1QetccSFAaVw==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/addon/hint/javascript-hint.min.js" integrity="sha512-2zi+0HSB5MXoy+BenDX/EKjqN6eUnsG2Lh9cpx+Ckua3Yi2XupO8ife9VELSg8iR7AT98yHQNyyaAL4ImVHcoQ==" crossorigin="anonymous"></script>
   
   <script src="./bundle.js"></script>
   
-  <!--<script>document.write(`<script src="${location.protocol}//${(location.host || 'localhost').split(':')[0]}:35729/livereload.js?snipver=1"></` + 'script>')</script>-->
+  <script>document.write(`<script src="${location.protocol}//${(location.host || 'localhost').split(':')[0]}:35729/livereload.js?snipver=1"></` + 'script>')</script>
 </body>
 </html>

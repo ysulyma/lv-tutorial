@@ -1,47 +1,56 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
+/* ractive-player and such */
 import {Audio, Controls, IdMap, Script, Player} from "ractive-player";
 // import {RecordingControl} from "rp-recording";
-// import ThumbCapture from "rp-thumb-capture";
-// import CursorRecorderPlugin from "rp-cursor/recorder";
 
-// @lib
+// import CodeRecorderPlugin from "rp-codemirror/recorder";
+// import CursorRecorderPlugin from "rp-cursor/recorder";
+// import PaintRecorderPlugin from "rp-paint/recorder";
+
+// import ThumbCapture from "rp-thumb-capture";
+
+/* @lib */
 // import HelpControl from "@lib/HelpControl";
 // import LoadingScreen from "@lib/LoadingScreen";
-// import ShowMarkerName from "@lib/ShowMarkerName";
+import ShowMarkerName from "@lib/ShowMarkerName";
 import rebindArrowKeys from "@lib/rebind-arrow-keys";
 //import rememberVolumeSettings from "@lib/remember-volume";
 import seekOnLoad from "@lib/seekonload";
 
-// resources
+/* resources */
 import {MEDIA_URL} from "./media-url";
-import objects from "./objects";
 import markers from "./markers";
+import objects from "./objects";
 
-// slides
+/* slides */
 import Intro from "./Intro";
+
+import CMSlide from "./CodeMirror";
+import CursorSlide from "./Cursor";
+import PaintSlide from "./Paint";
+
 import PlaybackSlide from "./PlaybackSlide";
 import ScriptSlide from "./ScriptSlide";
 import PlayerSlide from "./PlayerSlide";
-import AnimationSlide from "./AnimationSlide";
+import UtilsSlide from "./UtilsSlide";
 import RecordingSlide from "./RecordingSlide";
 
 const controls = (<>
   {Player.defaultControlsLeft}
 
   <div className="rp-controls-right">
+    {/* handy when developing */}
     {/*<ShowMarkerName/>*/}
 
     {/* generate thumbnails */}
     {/*<ThumbCapture/>*/}
 
-    {/* record audio, markers, cursor */}
-    {/*<RecordingControl plugins={[CursorRecorderPlugin]}/>*/}
+    {/* record audio, markers, and more */}
+    {/*<RecordingControl plugins={[CodeRecorderPlugin, CursorRecorderPlugin, PaintRecorderPlugin]}/>*/}
 
-    <Controls.Settings/>
-    {/*<HelpControl/>*/}
-    <Controls.FullScreen/>
+    {Player.defaultControlsRight}
   </div>
 </>);
 
@@ -56,7 +65,7 @@ function Ractive() {
 
     player.canPlay.then(() => {
       // use this when working on a particular section
-      // player.playback.seek(player.script.parseStart("player/"));
+      // player.playback.seek(player.script.parseStart("paint/"));
 
       // seek to time if URL includes e.g. ?t=1:11
       seekOnLoad(player.playback);
@@ -68,9 +77,13 @@ function Ractive() {
   const ps = script.parseStart;
 
   const highlights = [
+    {title: "Codebooth", time: ps("codemirror/")},
+    {title: "Cursor", time: ps("cursor/")},
+    {title: "Paint", time: ps("paint/")},
     {title: "Playback", time: ps("playback/")},
     {title: "Script", time: ps("script/")},
     {title: "Player", time: ps("player/")},
+    {title: "Utils", time: ps("utils/")},
     {title: "Recording", time: ps("recording/")}
   ];
 
@@ -86,17 +99,23 @@ function Ractive() {
 
   return (
     <Player controls={controls} ref={playerRef} script={script} thumbs={thumbData}>
-      {/*<LoadingScreen/>*/}
-      {<Audio start={0}>
-        <source src={`${MEDIA_URL}/audio/audio.webm`} type="audio/webm"/>
-        <source src={`${MEDIA_URL}/audio/audio.mp4`} type="audio/mp4"/>
-      </Audio>}
       <IdMap map={objects}>
+        {/*<LoadingScreen/>*/}
+        {<Audio start={0}>
+          <source src={`${MEDIA_URL}/audio/audio.webm`} type="audio/webm"/>
+          <source src={`${MEDIA_URL}/audio/audio.mp4`} type="audio/mp4"/>
+        </Audio>}
+
         <Intro/>
+        
+        <CMSlide/>
+        <CursorSlide/>
+        <PaintSlide/>
+
         <PlaybackSlide/>
         <ScriptSlide/>
         <PlayerSlide/>
-        <AnimationSlide/>
+        <UtilsSlide/>
         <RecordingSlide/>
       </IdMap>
     </Player>

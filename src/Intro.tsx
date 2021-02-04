@@ -8,7 +8,7 @@ const {during, from} = Utils.authoring,
 import Link from "@lib/Link";
 
 import {MEDIA_URL} from "./media-url";
-// import {IntroScript} from "./script";
+import {IntroPrompt} from "./prompts";
 
 export default function Intro() {
   const player = usePlayer();
@@ -48,7 +48,8 @@ export default function Intro() {
 
         <div className="box" id="fiddle" {...from("intro/fiddle")} onMouseUp={Player.preventCanvasClick}>
           <p>Try changing the background color:
-            <input onChange={onChangeColor} type="color"/></p>
+            <input onChange={onChangeColor} type="color"/>
+          </p>
 
           <p>Or the subtitle:</p>
           <textarea
@@ -56,9 +57,11 @@ export default function Intro() {
             onChange={onChangeText} value={text}/>
         </div>
 
-        <p className="box" {...from("intro/lmqm")}>
-        More examples at <Link href="https://lmqm.xyz">La mer qui monte</Link>
-        </p>
+        <div className="box" {...from("intro/pros")}>
+          <p>Much smaller than a traditional video file</p>
+          <p {...from("intro/edit")}>Very easy to make edits—no waiting for video export</p>
+          <p {...from("intro/lmqm")}>More examples at <Link href="https://lmqm.xyz">La mer qui monte</Link></p>
+        </div>
 
         <div className="box" id="get-started" {...from("intro/get-started")}>
           <p>Clone this tutorial: <Link href="https://github.com/ysulyma/rp-tutorial">https://github.com/ysulyma/rp-tutorial</Link></p>
@@ -70,7 +73,7 @@ export default function Intro() {
         <img src="https://covers.openlibrary.org/b/id/8598269-L.jpg"/>
       </Link>*/}
 
-        {/*<IntroScript/>*/}
+        {<IntroPrompt/>}
       </section>
     </IdMap>
   );
