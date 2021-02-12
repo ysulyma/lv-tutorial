@@ -11,7 +11,7 @@ export default [
   ["intro/pause", "0:02.567"],
   ["intro/pros", "0:07.985"],
   ["intro/edit", "0:22.973"],
-  ["intro/lmqm", "0:13.669"],
+  ["intro/epiplexis", "0:13.669"],
   ["intro/get-started", "0:08.924"],
   ["intro/reddit", "0:14.373"],
   ["codemirror/", "1:17.46"],

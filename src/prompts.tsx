@@ -32,7 +32,7 @@ export const IntroPrompt = (props: P) => (
       <br/>
       I use this for
     </Cue>
-    <Cue on="intro/lmqm">
+    <Cue on="intro/epiplexis">
       my math site, and you can see more interesting examples there.
       <br/>
       This video is a tutorial for if you want to start making these yourself. It does assume you're pretty comfortable with web development. To get started,

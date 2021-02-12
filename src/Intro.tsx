@@ -60,7 +60,7 @@ export default function Intro() {
         <div className="box" {...from("intro/pros")}>
           <p>Much smaller than a traditional video file</p>
           <p {...from("intro/edit")}>Very easy to make edits—no waiting for video export</p>
-          <p {...from("intro/lmqm")}>More examples at <Link href="https://lmqm.xyz">La mer qui monte</Link></p>
+          <p {...from("intro/epiplexis")}>More examples at <Link href="https://epiplexis.xyz">Epiplexis</Link></p>
         </div>
 
         <div className="box" id="get-started" {...from("intro/get-started")}>
