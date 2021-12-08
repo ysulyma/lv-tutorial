@@ -1,14 +1,14 @@
 import * as React from "react";
 import {useCallback, useState} from "react";
 
-import {IdMap, Player, Utils, usePlayer, useTimeUpdate} from "ractive-player";
+import {IdMap, Player, Utils, usePlayer, useTimeUpdate} from "liqvid";
 const {during, from} = Utils.authoring,
       {between} = Utils.misc;
 
 import Link from "@lib/Link";
 
-import {MEDIA_URL} from "./media-url";
-import {IntroPrompt} from "./prompts";
+import {MEDIA_URL} from "@env/media-url";
+import {IntroPrompt} from "@env/prompts";
 
 export default function Intro() {
   const player = usePlayer();
@@ -39,12 +39,10 @@ export default function Intro() {
     <IdMap>
       <section id="sec-intro" {...during("intro/")}>
         <h1>
-          <span className="ractive"><img alt="R" src={`${MEDIA_URL}/img/R.svg`}/>active</span>
-          <span className="player"><img alt="P" src={`${MEDIA_URL}/img/P.svg`}/>layer</span>
+          <img alt="Liqvid" src={`${MEDIA_URL}/img/logo.png`}/>
+          Liqvid
         </h1>
         <h2>{text}</h2>
-
-        <dfn id="dfn-ractives"><Link href="https://en.wikipedia.org/wiki/The_Diamond_Age">(ractives)</Link></dfn>
 
         <div className="box" id="fiddle" {...from("intro/fiddle")} onMouseUp={Player.preventCanvasClick}>
           <p>Try changing the background color:
@@ -64,9 +62,9 @@ export default function Intro() {
         </div>
 
         <div className="box" id="get-started" {...from("intro/get-started")}>
-          <p>Clone this tutorial: <Link href="https://github.com/ysulyma/rp-tutorial">https://github.com/ysulyma/rp-tutorial</Link></p>
+          <p>Clone this tutorial: <Link href="https://github.com/ysulyma/lv-tutorial">https://github.com/ysulyma/lv-tutorial</Link></p>
         
-          <p {...from("intro/reddit")}>Discussion: <Link href="https://reddit.com/r/ractive_player/">https://reddit.com/r/ractive_player/</Link></p>
+          <p {...from("intro/discord")}>Discussion: <Link href="https://discord.gg/u8Qab99zHx">https://discord.gg/u8Qab99zHx</Link></p>
         </div>
 
         {/*<Link href="https://en.wikipedia.org/wiki/The_Diamond_Age" id="diamond-age">

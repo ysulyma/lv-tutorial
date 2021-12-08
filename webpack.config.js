@@ -1,5 +1,7 @@
 const TerserPlugin = require("terser-webpack-plugin");
 
+const mode = process.env.NODE_ENV ?? "development";
+
 module.exports = {
   entry: `${__dirname}/src/index.tsx`,
   output: {
@@ -8,6 +10,7 @@ module.exports = {
   },
 
   externals: {
+    "liqvid": "Liqvid",
     "ractive-player": "RactivePlayer",
     "rp-recording": "RPRecording",
     "rangetouch": "RangeTouch",
@@ -15,7 +18,7 @@ module.exports = {
     "react-dom": "ReactDOM"
   },
 
-  mode: process.env.NODE_ENV,
+  mode: mode,
 
   module: {
     rules: [
@@ -45,6 +48,7 @@ module.exports = {
     extensions: [".ts", ".tsx", ".js", ".jsx", ".json"],
     alias: {
       "@lib": `${__dirname}/lib`,
+      "@env": `${__dirname}/src/@${mode}`
     }
   }
 };

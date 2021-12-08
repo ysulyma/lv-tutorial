@@ -2,25 +2,17 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 
 /* ractive-player and such */
-import {Audio, Controls, IdMap, Script, Player} from "ractive-player";
-// import {RecordingControl} from "rp-recording";
-
-// import CodeRecorderPlugin from "rp-codemirror/recorder";
-// import CursorRecorderPlugin from "rp-cursor/recorder";
-// import PaintRecorderPlugin from "rp-paint/recorder";
-
-// import ThumbCapture from "rp-thumb-capture";
+import {Audio, Controls, IdMap, Script, Player} from "liqvid";
 
 /* @lib */
 // import HelpControl from "@lib/HelpControl";
 // import LoadingScreen from "@lib/LoadingScreen";
-import ShowMarkerName from "@lib/ShowMarkerName";
 import rebindArrowKeys from "@lib/rebind-arrow-keys";
 //import rememberVolumeSettings from "@lib/remember-volume";
 import seekOnLoad from "@lib/seekonload";
 
 /* resources */
-import {MEDIA_URL} from "./media-url";
+import {MEDIA_URL} from "@env/media-url";
 import markers from "./markers";
 import objects from "./objects";
 
@@ -37,22 +29,7 @@ import PlayerSlide from "./PlayerSlide";
 import UtilsSlide from "./UtilsSlide";
 import RecordingSlide from "./RecordingSlide";
 
-const controls = (<>
-  {Player.defaultControlsLeft}
-
-  <div className="rp-controls-right">
-    {/* handy when developing */}
-    {/*<ShowMarkerName/>*/}
-
-    {/* generate thumbnails */}
-    {/*<ThumbCapture/>*/}
-
-    {/* record audio, markers, and more */}
-    {/*<RecordingControl plugins={[CodeRecorderPlugin, CursorRecorderPlugin, PaintRecorderPlugin]}/>*/}
-
-    {Player.defaultControlsRight}
-  </div>
-</>);
+import {controls} from "@env/controls";
 
 function Ractive() {
   const playerRef = React.useRef<Player>();

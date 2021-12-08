@@ -1,14 +1,13 @@
 import * as React from "react";
 import {useMemo} from "react";
 
-import {Utils, usePlayer} from "ractive-player";
+import {Utils, usePlayer} from "liqvid";
 const {during, from} = Utils.authoring;
 
 import Link from "@lib/Link";
 
-import {MEDIA_URL} from "./media-url";
-import {cursorReplay} from "./recordings";
-import {RecordingPrompt} from "./prompts";
+import {MEDIA_URL} from "@env/media-url";
+import {RecordingPrompt} from "@env/prompts";
 
 export default function PlaybackSlide() {
   return (

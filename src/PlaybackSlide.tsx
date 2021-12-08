@@ -1,11 +1,11 @@
 import * as React from "react";
 
-import {Utils} from "ractive-player";
+import {Utils} from "liqvid";
 const {during, from} = Utils.authoring;
 
 import Link from "@lib/Link";
 
-import {PlaybackPrompt} from "./prompts";
+import {PlaybackPrompt} from "@env/prompts";
 
 export default function PlaybackSlide() {
   return (

@@ -13,6 +13,7 @@
     "baseUrl": ".",
     "paths": {
       "@lib/*": ["./lib/*"],
+      "@env/*": ["./src/@development/*", "./src/@production/*"],
     }
   },
   "files": ["./src/index.tsx"]

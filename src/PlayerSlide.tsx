@@ -1,9 +1,9 @@
 import * as React from "react";
 
-import {Utils} from "ractive-player";
+import {Utils} from "liqvid";
 const {during, from} = Utils.authoring;
 
-import {PlayerPrompt} from "./prompts";
+import {PlayerPrompt} from "@env/prompts";
 
 export default function PlayerSlide() {
   return (

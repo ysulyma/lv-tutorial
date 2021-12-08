@@ -1,5 +1,5 @@
-import type {Playback} from "ractive-player";
-import {Utils} from "ractive-player";
+import type {Playback} from "liqvid";
+import {Utils} from "liqvid";
 const {timeRegexp} = Utils.time;
 
 const rgx = new RegExp(

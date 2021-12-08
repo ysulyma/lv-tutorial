@@ -1,11 +1,11 @@
 import * as React from "react";
 import {useMemo} from "react";
 
-import {Utils, usePlayer, useTimeUpdate} from "ractive-player";
+import {Utils, usePlayer, useTimeUpdate} from "liqvid";
 const {animate} = Utils.animation,
       {during} = Utils.authoring;
 
-import {AnimationPrompt} from "./prompts";
+import {AnimationPrompt} from "@env/prompts";
 
 import * as BezierEasing from "bezier-easing";
 const easeInSine = [0.47, 0, 0.745, 0.715] as const;

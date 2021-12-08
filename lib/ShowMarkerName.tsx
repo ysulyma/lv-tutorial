@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import {Player, Utils, usePlayer} from "ractive-player";
+import {Player, Utils, usePlayer} from "liqvid";
 const {anyHover} = Utils.mobile;
 const {useForceUpdate} = Utils.react;
 

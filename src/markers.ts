@@ -5,15 +5,14 @@ To record markers, enable Markers in the rp-recording dialog. Then press E to ad
 */
 
 export default [
-  ["intro/", "0:05.126"],
-  ["intro/ractives", "0:17.646"],
-  ["intro/fiddle", "0:07.889"],
-  ["intro/pause", "0:02.567"],
-  ["intro/pros", "0:07.985"],
-  ["intro/edit", "0:22.973"],
-  ["intro/epiplexis", "0:13.669"],
-  ["intro/get-started", "0:08.924"],
-  ["intro/reddit", "0:14.373"],
+  ["intro/", "0:20.955"],
+  ["intro/fiddle", "0:10.532"],
+  ["intro/pause", "0:02.86"],
+  ["intro/pros", "0:07.839"],
+  ["intro/edit", "0:23.233"],
+  ["intro/epiplexis", "0:13.506"],
+  ["intro/get-started", "0:10.553"],
+  ["intro/discord", "0:18.732"],
   ["codemirror/", "1:17.46"],
   ["cursor/", "0:19.917"],
   ["paint/", "0:41.562"],

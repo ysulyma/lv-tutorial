@@ -2,7 +2,7 @@ import * as React from "react";
 const {useCallback, useEffect, useMemo, useState} = React;
 import * as ReactDOM from "react-dom";
 
-import {Utils, usePlayer} from "ractive-player";
+import {Utils, usePlayer} from "liqvid";
 const {bind} = Utils.misc;
 const {onClick} = Utils.mobile;
 

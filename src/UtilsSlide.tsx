@@ -1,7 +1,7 @@
 import * as React from "react";
 import {useMemo, useRef} from "react";
 
-import {Utils, usePlayer, useTimeUpdate} from "ractive-player";
+import {Utils, usePlayer, useTimeUpdate} from "liqvid";
 const {animate} = Utils.animation,
       {during, from} = Utils.authoring,
       {dragHelperReact} = Utils.interactivity,
@@ -10,8 +10,8 @@ const {animate} = Utils.animation,
 import * as BezierEasing from "bezier-easing";
 const easeInSine = [0.47, 0, 0.745, 0.715] as const;
 
-import {MEDIA_URL} from "./media-url";
-import {UtilsPrompt} from "./prompts";
+import {MEDIA_URL} from "@env/media-url";
+import {UtilsPrompt} from "@env/prompts";
 
 export default function UtilsSlide() {
   const player = usePlayer();

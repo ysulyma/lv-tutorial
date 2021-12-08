@@ -1,4 +1,4 @@
-import type {Playback} from "ractive-player";
+import type {Playback} from "liqvid";
 
 /**
 Remember volume settings between views.

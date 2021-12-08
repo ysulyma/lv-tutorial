@@ -1,7 +1,7 @@
 import * as React from "react";
 import {useCallback, useEffect, useMemo, useRef} from "react";
 
-import {Player, Utils, usePlayer} from "ractive-player";
+import {Player, Utils, usePlayer} from "liqvid";
 const {during} = Utils.authoring,
       {dragHelperReact} = Utils.interactivity,
       {constrain} = Utils.misc,
@@ -13,8 +13,7 @@ import type {Interpreter} from "rp-codebooth";
 
 import JSInterpreter from "@lib/JSInterpreter";
 
-import {codeRecording} from "./recordings";
-import {CodeMirrorPrompt} from "./prompts";
+import {CodeMirrorPrompt} from "@env/prompts";
 
 export default function CodeMirrorSlide() {
   const interpreter = useRef<Interpreter>();
@@ -31,7 +30,7 @@ export default function CodeMirrorSlide() {
         Uncomment this to record typing
         */
         // recorder={CodeRecorderPlugin.recorder}
-        replay={codeRecording}
+        replay={window.recordings.code}
         start="codemirror/"
         theme="monokai"
       />

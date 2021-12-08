@@ -7,14 +7,11 @@ import * as React from "react";
 import {Prompt, Cue} from "rp-prompt";
 
 type P = typeof Prompt extends (props: infer T) => JSX.Element ? T : never;
-/*
+
 export const IntroPrompt = (props: P) => (
   <Prompt {...props}>
     <Cue on="intro/">
-      ractive-player is a library for making interactive videos, or
-    </Cue>
-    <Cue on="intro/ractives">
-      *ractives*, using the same tools you use to make webpages: HTML, CSS, and Javascript in React.
+      Liqvid is a library for making interactive videos using the same tools you use to make webpages: HTML, CSS, and Javascript in React.
       <br/>
       The video you are watching is not actually a video file, it's HTML and CSS synced up to an audio track using a large quantity of Javascript. For example,
     </Cue>
@@ -40,8 +37,8 @@ export const IntroPrompt = (props: P) => (
     <Cue on="intro/get-started">
       you should clone the repository for this video, and then you can see how this works from the source. The rest of this video will make a lot more sense if you're following along in the source code.
     </Cue>
-    <Cue on="intro/reddit">
-      I've also created a subreddit and you can ask questions there.
+    <Cue on="intro/discord">
+      I've also created a Discord and you can ask questions there.
       <br/>
       In the rest of this video, I'll show off some of the cool things you can do with this, using the different packages that are available for it. So put the flashy stuff up front. And then I'll go through the fundamental concepts behind it.
     </Cue>
@@ -169,26 +166,4 @@ export const RecordingPrompt = (props: P) => (
       Then there's a plugin API for custom recorders. So the coding, cursor movement, and drawing functionality that we saw at the beginning of the video were all examples of that.
     </Cue>
   </Prompt>
-);*/
-
-// production
-export const IntroPrompt = () => null;
-
-export const CodeMirrorPrompt = () => null;
-
-export const CursorPrompt = () => null;
-
-export const PaintPrompt = () => null;
-
-export const PlaybackPrompt = () => null;
-
-// lmao
-export const ScriptPrompt = () => null;
-
-export const PlayerPrompt = () => null;
-
-export const AnimationPrompt = () => null;
-
-export const RecordingPrompt = () => null;
-
-export const UtilsPrompt = () => null;
+);

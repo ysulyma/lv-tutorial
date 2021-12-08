@@ -1,4 +1,4 @@
-import type {Player} from "ractive-player";
+import type {Player} from "liqvid";
 
 /*
 By default ArrowLeft and ArrowRight perform seeking. This rebinds them so that
