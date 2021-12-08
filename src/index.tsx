@@ -69,7 +69,7 @@ function Ractive() {
     rows: 5,
     height: 100,
     width: 160,
-    frequency: 4,
+    frequency: 1,
     path: `${MEDIA_URL}/thumbs/%s.png`,
     highlights
   };
