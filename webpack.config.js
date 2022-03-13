@@ -1,12 +1,13 @@
 const TerserPlugin = require("terser-webpack-plugin");
+const path = require("path");
 
 const mode = process.env.NODE_ENV ?? "development";
 
 module.exports = {
-  entry: `${__dirname}/src/index.tsx`,
+  entry: path.join(__dirname, "src", "index.tsx"),
   output: {
     filename: "bundle.js",
-    path: process.cwd()
+    path: path.join(process.cwd(), "static")
   },
 
   externals: {

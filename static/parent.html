@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>My video</title>
+  
+  <!-- @script "host" -->
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: rgb(71, 58, 58);
+      height: 100%;
+      font-size: 18px;
+    }
+
+    main {
+      background: #FFF;
+      border: 1px solid #333;
+      border-style: none solid;
+      min-height: 100vh;
+      margin: 0 auto;
+      padding: 1em 2em;
+      width: 70%;
+    }
+
+    p {
+      margin: 1em 0;
+    }
+
+  /* videos */
+  .video-container {
+    display: block;
+    margin: 1em auto 2em;
+    width: 90%;
+  }
+  .aspect-ratio {
+    position: relative;
+    height: 0;
+    padding-bottom: 100%;
+  }
+
+  video {
+    aspect-ratio:  16/10;
+    width: 100%;
+  }
+
+  .aspect-ratio > iframe {
+    background-color: #121212;
+    border: none;
+    border-radius: 2px;
+    box-shadow: 0 0 .5em #0006;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+  }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>My article</h1>
+    <p>This page shows how to embed a Liqvid video in a page</p>
+    <div class="video-container">
+      <div class="aspect-ratio" style="padding-bottom: 62.5%">
+        <iframe allowfullscreen src="./"></iframe>
+      </div>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed et quae pariatur, eum delectus eveniet doloremque? Commodi aut minima doloribus nulla provident quidem assumenda ullam obcaecati, necessitatibus consequatur, maxime omnis.</p>
+  </main>
+
+  <!-- @script "livereload" -->
+</body>
+</html>

@@ -88,7 +88,7 @@ function HelpDialog(props: DialogProps) {
 
   return ReactDOM.createPortal(
     <div className="rp-help-dialog" style={props.style}>
-      <button onClick={props.closeDialog}>&times;</button>
+      <button aria-label="Close" onClick={props.closeDialog}>&times;</button>
 
       <div className="rp-help-tables">
         <table>

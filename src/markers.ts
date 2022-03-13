@@ -1,10 +1,12 @@
+import {Script} from "liqvid";
+
 /**
 Press W to go back one marker, E to go forward one marker.
 
 To record markers, enable Markers in the rp-recording dialog. Then press E to advance a marker.
 */
 
-export default [
+export const markers = [
   ["intro/", "0:20.955"],
   ["intro/fiddle", "0:10.532"],
   ["intro/pause", "0:02.86"],
@@ -40,3 +42,30 @@ export default [
   ["recording/link", "0:05.975"],
   ["recording/plugin", "0:12.37"]
 ] as [string, string][];
+
+export const script = new Script(markers);
+export const playback = script.playback;
+
+// use this when working on a particular section
+// playback.seek(script.parseStart("utils/"));
+
+export const highlights = [
+  {title: "Codebooth", time: script.parseStart("codemirror/")},
+  {title: "Cursor", time: script.parseStart("cursor/")},
+  {title: "Paint", time: script.parseStart("paint/")},
+  {title: "Playback", time: script.parseStart("playback/")},
+  {title: "Script", time: script.parseStart("script/")},
+  {title: "Player", time: script.parseStart("player/")},
+  {title: "Utils", time: script.parseStart("utils/")},
+  {title: "Recording", time: script.parseStart("recording/")}
+];
+
+/*
+// remember volume settings
+import {rememberVolume} from "@lib/remember-volume";
+rememberVolume(playback);
+
+// seek to time if URL includes e.g. ?t=1:11
+import {seekOnLoad} from "@lib/seekonload";
+seekOnLoad(playback);
+*/

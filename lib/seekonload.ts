@@ -8,9 +8,11 @@ const rgx = new RegExp(
   ")"
 );
 
-export default (playback: Playback) => {
+export function seekOnLoad(playback: Playback) => {
   const $_ = parent.location.search.match(rgx);
   if ($_) {
     playback.seek($_[1]);
   }
 };
+
+export default seekOnLoad;

@@ -10,5 +10,8 @@ node_modules
 *.png
 *.svg
 
+# generated files
+dist
+
 # certificate
 /ssl

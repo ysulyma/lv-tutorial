@@ -1,35 +1,34 @@
-import * as React from "react";
 import {useMemo, useRef} from "react";
 
-import {Utils, usePlayer, useTimeUpdate} from "liqvid";
-const {animate} = Utils.animation,
+import {Utils, usePlayer, useTime} from "liqvid";
+const {animate, bezier, easings} = Utils.animation,
       {during, from} = Utils.authoring,
       {dragHelperReact} = Utils.interactivity,
       {constrain} = Utils.misc;
 
-import * as BezierEasing from "bezier-easing";
-const easeInSine = [0.47, 0, 0.745, 0.715] as const;
-
 import {MEDIA_URL} from "@env/media-url";
 import {UtilsPrompt} from "@env/prompts";
+
+import {script} from "./markers";
+
+/* animation */
+const rotate = animate({
+  endValue: 2 * Math.PI,
+  startTime: script.parseStart("utils/animate/fire"),
+  duration: 1000,
+  easing: bezier(...easings.easeInSine)
+});
 
 export default function UtilsSlide() {
   const player = usePlayer();
   
   /* Utils.animation.animate */
   const duck = useRef<HTMLImageElement>();
-  const rotate = useMemo(() => animate({
-    endValue: 2 * Math.PI,
-    startTime: player.script.parseStart("utils/animate/fire"),
-    duration: 1000,
-    easing: BezierEasing(...easeInSine)
-  }), []);
 
-  useTimeUpdate(t => {
-    const p = rotate(t);
+  useTime(p => {
     duck.current.style.left = `${35 + 15 * Math.cos(p)}%`;
     duck.current.style.top = `${15 - 12.5 * Math.sin(p)}%`;
-  }, []);
+  }, rotate, []);
 
   /* Utils.interactivity.dragHelperReact */
   const pig = useRef<HTMLImageElement>();
@@ -78,7 +77,7 @@ export default function UtilsSlide() {
         <li {...from("utils/animate")}>
           <code>Utils.animation.animate</code>
 
-          <img id="utils-duck" src={`${MEDIA_URL}/img/duck.svg`} ref={duck}/>
+          <img alt="A cartoon duck" id="utils-duck" src={`${MEDIA_URL}/img/duck.svg`} ref={duck}/>
         </li>
         <li {...from("utils/authoring")}>
           <code>{"Utils.authoring.{during, from}"}</code>
@@ -86,7 +85,7 @@ export default function UtilsSlide() {
         <li {...from("utils/drag")}>
           <code>Utils.interactivity.dragHelperReact</code>
 
-          <img className="draggable" id="utils-pig" src={`${MEDIA_URL}/img/pig.svg`} ref={pig} {...pigEvents}/>
+          <img alt="A cartoon pig" className="draggable" id="utils-pig" src={`${MEDIA_URL}/img/pig.svg`} ref={pig} {...pigEvents}/>
         </li>
       </ul>
 

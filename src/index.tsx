@@ -1,19 +1,11 @@
-import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-/* ractive-player and such */
-import {Audio, Controls, IdMap, Script, Player} from "liqvid";
-
-/* @lib */
-// import HelpControl from "@lib/HelpControl";
-// import LoadingScreen from "@lib/LoadingScreen";
-import rebindArrowKeys from "@lib/rebind-arrow-keys";
-//import rememberVolumeSettings from "@lib/remember-volume";
-import seekOnLoad from "@lib/seekonload";
+import {Audio, IdMap, Player, Utils} from "liqvid";
+const {loadAllJSON} = Utils.json;
 
 /* resources */
 import {MEDIA_URL} from "@env/media-url";
-import markers from "./markers";
+import {highlights, script} from "./markers";
 import objects from "./objects";
 
 /* slides */
@@ -31,57 +23,20 @@ import RecordingSlide from "./RecordingSlide";
 
 import {controls} from "@env/controls";
 
-function Ractive() {
-  const playerRef = React.useRef<Player>();
-
-  React.useEffect(() => {
-    const player = playerRef.current;
-
-    rebindArrowKeys(player);
-    // rememberVolumeSettings(player.playback);
-
-    player.canPlay.then(() => {
-      // use this when working on a particular section
-      // player.playback.seek(player.script.parseStart("paint/"));
-
-      // seek to time if URL includes e.g. ?t=1:11
-      seekOnLoad(player.playback);
-      player.ready();
-    });
-  }, []);
-
-  const script = new Script(markers);
-  const ps = script.parseStart;
-
-  const highlights = [
-    {title: "Codebooth", time: ps("codemirror/")},
-    {title: "Cursor", time: ps("cursor/")},
-    {title: "Paint", time: ps("paint/")},
-    {title: "Playback", time: ps("playback/")},
-    {title: "Script", time: ps("script/")},
-    {title: "Player", time: ps("player/")},
-    {title: "Utils", time: ps("utils/")},
-    {title: "Recording", time: ps("recording/")}
-  ];
-
-  const thumbData = {
-    cols: 5,
-    rows: 5,
-    height: 100,
-    width: 160,
+function Tutorial() {
+  const thumbs = {
     frequency: 1,
     path: `${MEDIA_URL}/thumbs/%s.png`,
     highlights
   };
 
   return (
-    <Player controls={controls} ref={playerRef} script={script} thumbs={thumbData}>
+    <Player controls={controls} script={script} thumbs={thumbs}>
       <IdMap map={objects}>
-        {/*<LoadingScreen/>*/}
-        {<Audio start={0}>
+        <Audio>
           <source src={`${MEDIA_URL}/audio/audio.webm`} type="audio/webm"/>
           <source src={`${MEDIA_URL}/audio/audio.mp4`} type="audio/mp4"/>
-        </Audio>}
+        </Audio>
 
         <Intro/>
         
@@ -99,4 +54,9 @@ function Ractive() {
   );
 }
 
-ReactDOM.render(<Ractive/>, document.querySelector("main"));
+// load recordings JSON
+loadAllJSON().then(() => {
+  ReactDOM.render(<Tutorial/>, document.querySelector("main"));
+});
+
+import "./types";

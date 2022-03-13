@@ -1,5 +1,3 @@
-import * as React from "react";
-
 /**
   Display a loading screen while ractive-player is not-ready.
 */

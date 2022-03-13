@@ -1,11 +1,7 @@
-import * as React from "react";
-import {useCallback, useEffect, useMemo, useRef} from "react";
+import {useRef} from "react";
 
-import {Player, Utils, usePlayer} from "liqvid";
-const {during} = Utils.authoring,
-      {dragHelperReact} = Utils.interactivity,
-      {constrain} = Utils.misc,
-      {onClick} = Utils.mobile;
+import {Utils} from "liqvid";
+const {getJSON} = Utils.json;
 
 // import CodeRecorderPlugin from "rp-codemirror/recorder";
 import {CodeBooth} from "rp-codebooth";
@@ -22,7 +18,7 @@ export default function CodeMirrorSlide() {
   }
 
   return (
-    <section id="sec-codemirror" {...during("codemirror/")}>
+    <section id="sec-codemirror" data-during="codemirror/">
       <CodeBooth
         interpreter={interpreter.current}
         mode="javascript"
@@ -30,7 +26,7 @@ export default function CodeMirrorSlide() {
         Uncomment this to record typing
         */
         // recorder={CodeRecorderPlugin.recorder}
-        replay={window.recordings.code}
+        replay={getJSON("recordings").code}
         start="codemirror/"
         theme="monokai"
       />

@@ -1,6 +1,6 @@
 @import "rp-codebooth/style.css"
 @import "rp-paint/style.css"
-@import "rp-prompt/style.css"
+// @import "rp-prompt/style.css"
 
 $blue = #1A69B5
 $wine = #AF1866
@@ -8,7 +8,7 @@ $wine = #AF1866
 @import "lib/help-control"
 @import "lib/loading-screen"
 
-.rp-thumbnail-time
+.lv-thumbnail-time
   color #222
 
 @import "intro"
@@ -22,7 +22,7 @@ h2
   margin-top .5em
   text-align center
 
-.rp-canvas
+.lv-canvas
   background #EEE
   
 body
@@ -32,7 +32,7 @@ body
   cursor grab
   cursor -webkit-grab
 
-body.dragging .rp-canvas, body.dragging .draggable, .dragging
+body.dragging .lv-canvas, body.dragging .draggable, .dragging
   cursor grabbing
   cursor -webkit-grabbing
   
@@ -61,4 +61,30 @@ section
   font-size 2em
   line-height 1.5
   margin 1em
-  
+
+
+.lv-controls-buttons, .rp-controls-buttons,
+.lv-controls-right, .rp-controls-right,
+.lv-controls-volume, .rp-controls-volume
+  > button
+    background none
+    border none
+    outline none
+    cursor pointer
+    opacity .9
+    transition opacity .1s cubic-bezier(0.4,0,1,1)
+    height 100%
+    padding 0
+    width 38px
+    
+    &:hover
+      opacity 1
+      transition opacity .1s cubic-bezier(0,0,0.2,1)
+      
+    > svg
+      height 100%
+
+.lv-controls-buttons > .lv-controls-volume > button
+  > svg
+    padding 3px
+

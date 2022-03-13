@@ -1,27 +1,24 @@
-import * as React from "react";
+import {useMarkerUpdate, useScript, Utils} from "liqvid";
 
-import {Player, Utils, usePlayer} from "liqvid";
 const {anyHover} = Utils.mobile;
 const {useForceUpdate} = Utils.react;
+
+const style: React.CSSProperties = {
+  backgroundColor: "#1A69B5",
+  fontFamily: `"Roboto Slab", sans-serif`,
+  lineHeight: "36px",
+  padding: "0 .5em",
+  userSelect: "all",
+  verticalAlign: "top"
+};
 
 export default function ShowMarkerName() {
   if (!anyHover)
     return null;
-  const {script} = usePlayer();
-  const forceUpdate = useForceUpdate();
+    
+  const script = useScript();
 
-  React.useEffect(() => {
-    script.hub.on("markerupdate", forceUpdate);
-  }, []);
-
-  const style: React.CSSProperties = {
-    backgroundColor: "#1A69B5",
-    fontFamily: `"Roboto Slab", sans-serif`,
-    lineHeight: "36px",
-    padding: "0 .5em",
-    userSelect: "all",
-    verticalAlign: "top"
-  };
+  useMarkerUpdate(useForceUpdate(), []);
 
   return (
     <span className="rp-marker-name" key="show-marker-name" style={style}>

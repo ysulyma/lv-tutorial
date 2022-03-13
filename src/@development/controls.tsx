@@ -1,24 +1,10 @@
-import * as React from "react";
-import {Player} from "liqvid";
-
+import ShowMarkerName from "@lib/ShowMarkerName";
+import CodeRecording from "rp-codemirror/recorder";
+import CursorRecording from "rp-cursor/recorder";
+import PaintRecording from "rp-paint/recorder";
 import {RecordingControl} from "rp-recording";
 
-import CodeRecorderPlugin from "rp-codemirror/recorder";
-import CursorRecorderPlugin from "rp-cursor/recorder";
-import PaintRecorderPlugin from "rp-paint/recorder";
+export const controls = [<ShowMarkerName/>,<RecordingControl plugins={[CodeRecording, CursorRecording, PaintRecording]}/>];
 
-import ShowMarkerName from "@lib/ShowMarkerName";
-
-export const controls = (<>
-  {Player.defaultControlsLeft}
-
-  <div className="rp-controls-right">
-    {/* handy when developing */}
-    {/*<ShowMarkerName/>*/}
-
-    {/* record audio, markers, and more */}
-    <RecordingControl/>
-
-    {Player.defaultControlsRight}
-  </div>
-</>);
+// import {rebindArrowKeys} from "@lib/rebind-arrow-keys";
+// rebindArrowKeys(player);

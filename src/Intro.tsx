@@ -1,12 +1,10 @@
-import * as React from "react";
-import {useCallback, useState} from "react";
+import {useCallback, useMemo, useRef, useState} from "react";
 
-import {IdMap, Player, Utils, usePlayer, useTimeUpdate} from "liqvid";
+import {IdMap, Player, Utils, usePlayer, useTime} from "liqvid";
 const {during, from} = Utils.authoring,
       {between} = Utils.misc;
 
 import Link from "@lib/Link";
-
 import {MEDIA_URL} from "@env/media-url";
 import {IntroPrompt} from "@env/prompts";
 
@@ -25,10 +23,10 @@ export default function Intro() {
   }, []);
 
   // pausing
-  const m = React.useMemo(() => player.script.parseStart("intro/pause"), []);
-  const prev = React.useRef(player.playback.currentTime);
+  const m = useMemo(() => player.script.parseStart("intro/pause"), []);
+  const prev = useRef(player.playback.currentTime);
   const EPSILON = 300;
-  useTimeUpdate(t => {
+  useTime(t => {
     if (between(m - EPSILON, prev.current, m) && between(m, t, m + EPSILON)) {
       player.playback.pause();
     }

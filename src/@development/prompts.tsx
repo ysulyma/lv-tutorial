@@ -80,10 +80,10 @@ export const PlaybackPrompt = (props: P) => (
       a standard requestAnimationFrame loop that simulates a media element being played. It
     </Cue>
     <Cue on="playback/html">
-      imitates the HTMLMediaElement interface to a certain extent, although it doesn't actually implement it. And then it dispatches
+      imitates the HTMLMediaElement interface to a certain extent, although it doesn't actually implement it. And it dispatches
     </Cue>
     <Cue on="playback/hub">
-      events through an EventEmitter called playback.hub, that things can subscribe to. (All the EventEmitters in this library are called Hub, which comes from MathJax.)
+      events through an EventEmitter.
     </Cue>
   </Prompt>
 );
