@@ -1,6 +1,6 @@
 import type {Playback} from "liqvid";
 import {Utils} from "liqvid";
-const {timeRegexp} = Utils.time;
+const {parseTime, timeRegexp} = Utils.time;
 
 const rgx = new RegExp(
   "(?:^\\?|&)t=(" +
@@ -8,10 +8,10 @@ const rgx = new RegExp(
   ")"
 );
 
-export function seekOnLoad(playback: Playback) => {
+export function seekOnLoad(playback: Playback) {
   const $_ = parent.location.search.match(rgx);
   if ($_) {
-    playback.seek($_[1]);
+    playback.seek(parseTime($_[1]));
   }
 };
 
