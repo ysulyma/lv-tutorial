@@ -2,8 +2,8 @@
   "name": "lv-tutorial",
   "version": "2.0.0",
   "description": "Tutorial for Liqvid",
-  "main": "server.js",
   "scripts": {
+    "start": "liqvid serve",
     "stylus": "stylus --compress --include-css --include ./node_modules --out static --watch styl/style.styl",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
