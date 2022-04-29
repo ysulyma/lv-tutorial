@@ -7,11 +7,12 @@ node_modules
 # media
 *.mp4
 *.webm
-*.png
-*.svg
+# *.png
+# *.svg
 
 # generated files
 dist
+static/thumbs
 
 # certificate
 /ssl
