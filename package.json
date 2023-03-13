@@ -21,6 +21,7 @@
     "eslint-plugin-react": "^7.29.3",
     "eslint-plugin-react-hooks": "^4.3.0",
     "express": "^4.17.3",
+    "ibm-watson": "^6.2.2",
     "liqvid": "2.1.1",
     "livereload": "^0.9.3",
     "pepjs": "^0.5.3",
